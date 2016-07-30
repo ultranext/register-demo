@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+form{
+	
+}
+</style>
+</head>
+
+<body>
+<form action="">
+<div><label for="">
+<span>会员名:</span><input type="text"></label><p style="visibility:hidden">
+<i class = "ati"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
+<div><label for=""><span></span><b id = "count">0个字符</b></label></div>
+<div><label for=""><span>登录密码:</span><input type="password"></label><p style="visibility:hidden"><i class = "err"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
+<div><label for=""><span>确认密码:</span></label><input type="text"><p style="visibility:hidden"><i class = "msg"></i>请再输入一次</p></div>
+<div><label for="">验证码</label><input type="text"></div>
+</form>
+<script>
+function $(el){
+	return document.querySelector(el);
+	}
+window.onload=function(){
+	var alinput = document.getElementsByTagName("input"),
+	oName = alinput[0];
+	pwd = alinput[1];
+	pwd2 = alinput[2];
+	ap = document.getElementsByTagName("p");
+	var re = /[^\w\u4e00-\u9fa5]/g;
+	oName.onfocus = function(){
+		$("p").style.visibility = "visible";
+		
+		};
+	oName.onkeyup = function(){
+		
+		$("#count").innerHTML = getLength(oName.value)+"个字符";
+		$("#count").style.visibility = "visible";
+		};
+	oName.onblur = function(){
+		if(re.test(oName.value.trim())){
+			$(".ati").innerHTML = "wrong";
+			}
+		}
+	}
+	
+	function getLength(str){
+		return str.replace(/[^\x00-xff]/g,"xx").length;
+		}
+</script>
+</body>
+</html>
