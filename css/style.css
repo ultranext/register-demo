@@ -1,2 +1,8 @@
-*{margin: 0;padding: 0;font: 12px/1.5 "宋体" ,"Arial",'sans-serif','Tahoma';color: #666 }
-form{width:740px;height:500px;margin:0 auto;}
+*{font: 12px/1.5 "宋体" ,"Arial",'sans-serif','Tahoma';color: #666 }
+form{width:740px;height:500px;margin:100px auto;}
+form div{overflow: hidden;clear: both;line-height: 42px;margin-bottom: 5px}
+form div label{float: left;margin:8px 5px;width: 240px;}
+form div label span{display:inline-block;width:75px;}
+p.info {width: 300px; margin-left: 260px}
+form div >span{margin-left: 90px;}
+label input{margin-left:10px}

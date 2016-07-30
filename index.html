@@ -9,13 +9,15 @@
 
 <body>
 <form action="">
-<div><label for="">
-<span>会员名:</span><input type="text"></label><p style="visibility:hidden">
+<div><label for="name">
+<span>会员名:</span><input type="text" id="name"></label><p class="info">
 <i class = "ati"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
-<div><label for=""><span></span><b id = "count">0个字符</b></label></div>
-<div><label for=""><span>登录密码:</span><input type="password"></label><p style="visibility:hidden"><i class = "err"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
-<div><label for=""><span>确认密码:</span></label><input type="text"><p style="visibility:hidden"><i class = "msg"></i>请再输入一次</p></div>
-<div><label for="">验证码</label><input type="text"></div>
+<div><span><b id = "count">0个字符</b></span></div>
+<div><label for="pswd"><span>登录密码:</span><input type="password" id="pswd"></label><p class="info"><i class = "err"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
+<div><span><b id = "count">弱中强</b></span></div>
+<div><label for="confirm"><span>确认密码:</span><input type="text" id="confirm"></label><p class="info"><i class = "msg"></i>请再输入一次</p></div>
+<div><label for="code"><span>验证码</span><input type="text" id="code"></label></div>
+<div><input type="submit" value="同意协议并注册" /></div>
 </form>
 <script>
 function $(el){
