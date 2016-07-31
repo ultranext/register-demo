@@ -10,45 +10,45 @@
 <body>
 <form action="">
 <div><label for="name">
-<span>会员名:</span><input type="text" id="name"></label><p class="info">
-<i class = "ati"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
-<div><span><b id = "count">0个字符</b></span></div>
-<div><label for="pswd"><span>登录密码:</span><input type="password" id="pswd"></label><p class="info"><i class = "err"></i>5-25个字符，一个汉字为2个字符，推荐使用中文会员名</p></div>
-<div><span><b id = "count">弱中强</b></span></div>
-<div><label for="confirm"><span>确认密码:</span><input type="text" id="confirm"></label><p class="info"><i class = "msg"></i>请再输入一次</p></div>
+<span>会员名:</span><input type="text" id="name"></label><p class="info" style="visibility:hidden">
+</p></div>
+<div><span><b style="visibility:hidden" id = "count"></b></span></div>
+<div><label for="pswd"><span>登录密码:</span><input type="password" id="pswd"></label><p class="info"><i class = "err"></i></p></div>
+<div id = "level"><span><b><em class="active">弱</em><em class="inactive">中</em><em class="inactive">强</em></b></span></div>
+<div><label for="confirm"><span>确认密码:</span><input type="password" id="confirm" disabled="disabled"></label><p class="info" style="visibility:hidden"><i class = "msg"></i>请再输入一次</p></div>
 <div><label for="code"><span>验证码</span><input type="text" id="code"></label></div>
 <div><input type="submit" value="同意协议并注册" /></div>
 </form>
-<script>
-function $(el){
-	return document.querySelector(el);
-	}
-window.onload=function(){
-	var alinput = document.getElementsByTagName("input"),
-	oName = alinput[0];
-	pwd = alinput[1];
-	pwd2 = alinput[2];
-	ap = document.getElementsByTagName("p");
-	var re = /[^\w\u4e00-\u9fa5]/g;
-	oName.onfocus = function(){
-		$("p").style.visibility = "visible";
+<script src="js/register.js">
+// function $(el){
+// 	return document.querySelector(el);
+// 	}
+// window.onload=function(){
+// 	var alinput = document.getElementsByTagName("input"),
+// 	oName = alinput[0];
+// 	pwd = alinput[1];
+// 	pwd2 = alinput[2];
+// 	ap = document.getElementsByTagName("p");
+// 	var re = /[^\w\u4e00-\u9fa5]/g;
+// 	oName.onfocus = function(){
+// 		$("p").style.visibility = "visible";
 		
-		};
-	oName.onkeyup = function(){
+// 		};
+// 	oName.onkeyup = function(){
 		
-		$("#count").innerHTML = getLength(oName.value)+"个字符";
-		$("#count").style.visibility = "visible";
-		};
-	oName.onblur = function(){
-		if(re.test(oName.value.trim())){
-			$(".ati").innerHTML = "wrong";
-			}
-		}
-	}
+// 		$("#count").innerHTML = getLength(oName.value)+"个字符";
+// 		$("#count").style.visibility = "visible";
+// 		};
+// 	oName.onblur = function(){
+// 		if(re.test(oName.value.trim())){
+// 			$(".ati").innerHTML = "wrong";
+// 			}
+// 		}
+// 	}
 	
-	function getLength(str){
-		return str.replace(/[^\x00-xff]/g,"xx").length;
-		}
+// 	function getLength(str){
+// 		return str.replace(/[^\x00-xff]/g,"xx").length;
+// 		}
 </script>
 </body>
 </html>
